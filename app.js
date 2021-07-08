@@ -78,8 +78,13 @@ function deleteNode(index){
 
 
 let search = document.getElementById('searchTxt');
+let searchBtn = document.getElementById('searchBtn');
 
-search.addEventListener('input' , function(){
+
+search.addEventListener('input' , input);
+searchBtn.addEventListener('click' , input);
+
+ function input(e){
 
     let inputval = search.value.toLowerCase();
     console.log("Input event fires" , inputval);
@@ -94,10 +99,73 @@ search.addEventListener('input' , function(){
 
         if(cardTxt.includes(inputval)){
             element.style.display = "block";
+            
+            e.preventDefault();
+            
         }
 
         else{
             element.style.display ="none";
+        
+            e.preventDefault();
         }
     })
-})
+}
+
+
+
+// let search = document.getElementById('searchTxt');
+// let search1 = document.getElementById('searchBtn');
+
+// search.addEventListener('input' , input);
+// search1.addEventListener('click' , search23);
+
+
+// function input(){
+
+//     let inputval = search.value.toLowerCase();
+//     console.log("Input event fires" , inputval);
+
+
+//     let noteCards = document.getElementsByClassName('notesCard');
+//     Array.from(noteCards).forEach(function(element){
+
+
+//         let cardTxt = element.getElementsByTagName("p")[0].innerText.toLowerCase();
+//         console.log(cardTxt);
+
+//         if(cardTxt.includes(inputval)){
+//             element.style.display = "block";
+//         }
+
+//         else{
+//             element.style.display ="none";
+//         }
+//     })
+
+// }
+// function search23(e){
+
+//     let inputval = search.value.toLowerCase();
+//     console.log("Input event fires" , inputval);
+
+
+//     let noteCards = document.getElementsByClassName('notesCard');
+//     Array.from(noteCards).forEach(function(element){
+
+
+//         let cardTxt = element.getElementsByTagName("p")[0].innerText.toLowerCase();
+//         console.log(cardTxt);
+
+//         if(cardTxt.includes(inputval)){
+//             element.style.display = "block";
+//             e.preventDefault();
+//         }
+
+//         else{
+//             element.style.display ="none";
+//             e.preventDefault();
+//         }
+//     })
+// }
+
