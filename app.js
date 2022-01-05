@@ -103,7 +103,7 @@ searchBtn.addEventListener('click' , input);
     Array.from(noteCards).forEach(function(element){
 
 
-        let cardTxt = element.getElementsByTagName("p")[0].innerText.toLowerCase();
+        let cardTxt = element.getElementsByTagName("h5")[0].innerText.toLowerCase();
         console.log(cardTxt);
 
         if(cardTxt.includes(inputval)){
